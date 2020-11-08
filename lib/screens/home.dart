@@ -232,6 +232,7 @@ class _InputPageState extends State<InputPage> {
                       score: calc.bmicalc(),
                       result: calc.bmitext(),
                       advice: calc.advice(),
+                      weightlose: calc.weightlose(),
                     ),
                   ),
                 );

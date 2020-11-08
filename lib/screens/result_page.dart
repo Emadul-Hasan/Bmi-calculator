@@ -1,15 +1,21 @@
-import 'package:bmi_calculator/constants.dart';
+import 'package:bmicalculator2/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../components/reusable_container.dart';
 import '../components/ReusableBottombutton.dart';
 
 class Resultpage extends StatelessWidget {
-  Resultpage(
-      {@required this.score, @required this.result, @required this.advice});
-  final String score;
+  Resultpage({
+    @required this.score,
+    @required this.result,
+    @required this.advice,
+    @required this.weightlose,
+  });
+
+  final double score;
   final String result;
   final String advice;
+  final String weightlose;
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +50,15 @@ class Resultpage extends StatelessWidget {
                     style: KResultTexttop,
                   ),
                   Text(
-                    score,
+                    score.toStringAsFixed(1),
                     style: KResultnumber,
                   ),
                   Text(
-                    advice,
+                    'Normal Bmi score is 18.5-25.0' +
+                        '\n' +
+                        advice +
+                        '\n' +
+                        weightlose,
                     style: KResulttextbottom,
                     textAlign: TextAlign.center,
                   ),
